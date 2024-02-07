@@ -21,6 +21,7 @@ public class Address
     public string? Line3 { get; set; }
 
     [Required]
+    [PostCodeValidation]
     public string PostCode { get; set; }
 
     [Required]
