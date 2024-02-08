@@ -31,3 +31,33 @@ and maybe extend with `Assert.Empty(...)`
 
 Now this will FAIL due to PostCode validation; it will attempt to place what _looks_ like correct information in there, but fail because Postcode must be exactly 5 characters long. FIRST RED FLAG; naive assumptions.
 
+3. Attempt inline theories
+
+Prompt:
+```
+Write a test for Address validation using XUnit theories for all passing and failing permutations
+```
+
+Analyse result
+- Benefits (structures the test cases quite well)
+- Downsides (mix of terminology, incorrect test cases (assuming optional fields must be required)
+
+4. Rewrite tests for better output
+
+Prompt
+
+```
+Refactor Address_Validation_Test method to provide clearer human-readable failure messages
+```
+
+Or for extreme readability
+
+```
+Refactor the InlineData tests of method Address_Validation_Test into individual [Fact] tests. Ensure the common Validator.TryValidateObject code is abstracted into a separate private method to ensure good readability.
+```
+
+and if it tries to get you to do the work...
+
+```
+Expand on all the tests above.
+```
